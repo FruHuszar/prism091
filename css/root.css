@@ -1,0 +1,46 @@
+:root {
+  --color-bg: #24201d;
+  --color-card: #2d2824;
+  --color-text: #e57c49;
+  --color-text-dim: #aba38f;
+  --color-border: #3d3530;
+  --color-border-light: #565538;
+
+  --color-action: #565538;
+  --color-action-hover: #6d6c4b;
+  --color-delete: #792e29;
+
+  --color-white-low: rgba(217, 212, 200, 0.04);
+  --color-white-medium: rgba(217, 212, 200, 0.12);
+  --color-white-border: rgba(217, 212, 200, 0.2);
+  --color-black-transparent: rgba(18, 16, 15, 0.75);
+
+  --spacing-xs: 5px;
+  --spacing-s: 6px;
+  --spacing-m: 10px;
+  --spacing-l: 12px;
+  --spacing-xl: 15px;
+  --spacing-xxl: 20px;
+  --spacing-xxxl: 25px;
+
+  --radius-s: 8px;
+  --radius-m: 12px;
+  --radius-l: 20px;
+  --radius-circle: 50%;
+
+  --font-s: 0.8rem;
+  --font-m: 0.85rem;
+  --font-base: 1rem;
+
+  --weight-normal: 500;
+  --weight-bold: bold;
+
+  --size-checkbox: 20px;
+  --size-indicator: 20px;
+  --size-delete-btn: 24px;
+  --size-delete-btn-font: 0.8rem;
+  --max-width: 1200px;
+
+  --border-base: 1px solid var(--color-border);
+  --border-indicator: 1px solid var(--color-white-border);
+}

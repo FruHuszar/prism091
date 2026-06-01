@@ -1,0 +1,88 @@
+body {
+  background-color: var(--color-bg);
+  color: var(--color-text);
+}
+
+.checklist {
+  background: var(--color-card);
+  border-radius: var(--radius-m);
+  border: var(--border-base);
+}
+
+.color-item {
+  background: var(--color-white-low);
+  border: var(--border-base);
+  border-radius: var(--radius-s);
+  cursor: grab;
+}
+
+.color-item.dragging {
+  opacity: 0.5;
+  background: var(--color-white-medium);
+}
+
+.drag-handle {
+  color: var(--color-text-dim);
+}
+
+.indicator {
+  border-radius: var(--radius-circle);
+  border: var(--border-indicator);
+}
+
+.status-checkbox {
+  accent-color: var(--color-action);
+  cursor: pointer;
+}
+
+.upload-btn {
+  background-color: var(--color-border);
+  color: var(--color-text);
+  border: 1px solid var(--color-border-light);
+  border-radius: var(--radius-l);
+  cursor: pointer;
+}
+
+.upload-btn:active {
+  background-color: var(--color-border-light);
+}
+
+.draw-btn {
+  background-color: var(--color-text);
+  color: white;
+  border: none;
+  border-radius: var(--radius-s);
+  cursor: pointer;
+}
+
+#deleteBtn {
+  background-color: var(--color-action);
+}
+
+.draw-btn:active {
+  background-color: var(--color-action-hover);
+}
+
+.gallery-section {
+  background: var(--color-card);
+  border-radius: var(--radius-m);
+  border: var(--border-base);
+}
+
+.gallery-item {
+  border-radius: var(--radius-s);
+  overflow: hidden;
+  border: var(--border-base);
+}
+
+.gallery-img {
+  object-fit: cover;
+}
+
+.delete-btn {
+  background: var(--color-black-transparent);
+  color: var(--color-delete);
+  border: none;
+  border-radius: var(--radius-circle);
+  cursor: pointer;
+}

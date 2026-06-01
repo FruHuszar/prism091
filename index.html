@@ -1,0 +1,98 @@
+<!doctype html>
+<html lang="hu">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Prism | Search for colors in your city and make beautiful collages."
+    />
+
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Prism 091" />
+    <meta
+      property="og:description"
+      content="Prism | Search for colors in your city and make beautiful collages."
+    />
+    <meta property="og:image" content="img/avatar.jpg" />
+
+    <title>Prism 091</title>
+
+    <link rel="stylesheet" href="css/main.css?v=1.0.1" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined"
+      rel="stylesheet"
+    />
+
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="16x16"
+      href="img/favicon-16x16.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="img/favicon-32x32.png"
+    />
+    <link rel="shortcut icon" href="img/favicon.ico" type="image/x-icon" />
+    <link
+      rel="apple-touch-icon"
+      sizes="180x180"
+      href="img/apple-touch-icon.png"
+    />
+    <link rel="manifest" href="img/site.webmanifest" />
+
+    <script src="https://unpkg.com/dexie@3.2.4/dist/dexie.min.js"></script>
+    <script type="module" src="js/index.js?v=1.0.1"></script>
+
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@graph": [
+          {
+            "@type": "WebApplication",
+            "@id": "#webapp",
+            "name": "Prism 091",
+            "applicationCategory": "LifestyleApplication",
+            "operatingSystem": "Windows, macOS, Linux, Android, iOS",
+            "description": "An aesthetic color palette explorer and collage maker crafted for date nights and visual mood boarding.",
+            "browserRequirements": "Requires JavaScript. Requires HTML5. IndexedDB enabled."
+          },
+          {
+            "@type": "SoftwareSourceCode",
+            "name": "Prism 091 Source Code",
+            "programmingLanguage": {
+              "@type": "ComputerLanguage",
+              "name": "JavaScript"
+            },
+            "runtimePlatform": "Browser",
+            "author": {
+              "@type": "Person",
+              "name": "Fruzsina Anna Huszár",
+              "url": "https://github.com/FruHuszar"
+            }
+          }
+        ]
+      }
+    </script>
+  </head>
+  <body>
+    <main class="container">
+      <section class="checklist">
+        <div id="checklistContainer"></div>
+        <button class="draw-btn" id="drawBtn">Draw</button>
+      </section>
+      <section class="gallery-section">
+        <div class="gallery-grid" id="galleryGrid"></div>
+        <div class="action-row">
+          <button class="draw-btn" id="printBtn">Print</button>
+          <button class="draw-btn" id="deleteBtn">
+            <span class="material-symbols-outlined">delete_forever</span>
+          </button>
+        </div>
+      </section>
+    </main>
+  </body>
+</html>

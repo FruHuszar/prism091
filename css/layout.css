@@ -1,0 +1,130 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-height: 100vh;
+  padding: var(--spacing-xxl) var(--spacing-m);
+}
+
+.container {
+  width: 100%;
+  max-width: var(--max-width);
+  display: flex;
+  flex-direction: row;
+  gap: var(--spacing-xxxl);
+}
+
+.container > *:nth-child(1) {
+  flex: 4;
+}
+
+.container > *:nth-child(2) {
+  flex: 6;
+}
+
+.checklist {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-m);
+  padding: var(--spacing-xl);
+}
+
+.color-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: var(--spacing-m);
+}
+
+.left-side {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-l);
+}
+
+.right-side {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-m);
+}
+
+.indicator {
+  width: var(--size-indicator);
+  height: var(--size-indicator);
+  flex-shrink: 0;
+}
+
+.status-checkbox {
+  width: var(--size-checkbox);
+  height: var(--size-checkbox);
+}
+
+.draw-btn {
+  width: 100%;
+  padding: var(--spacing-l);
+  text-align: center;
+}
+
+.upload-btn {
+  padding: var(--spacing-s) var(--spacing-l);
+}
+
+.action-row {
+  display: flex;
+  flex-direction: row;
+  gap: var(--spacing-m);
+}
+
+.action-row .draw-btn {
+  flex: 1;
+  width: auto;
+}
+
+.gallery-section {
+  padding: var(--spacing-xl);
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-m);
+}
+
+.gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--spacing-m);
+}
+
+.gallery-item {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 1 / 1;
+}
+
+.gallery-img {
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+
+.delete-btn {
+  position: absolute;
+  top: var(--spacing-xs);
+  right: var(--spacing-xs);
+  width: var(--size-delete-btn);
+  height: var(--size-delete-btn);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 2;
+}
+
+@media screen and (orientation: portrait) {
+  .container {
+    flex-direction: column;
+  }
+}
