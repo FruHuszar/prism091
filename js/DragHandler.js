@@ -2,6 +2,8 @@ export default class DragHandler {
   #container;
   #onOrderChange;
   #touchItem = null;
+  #clone = null;
+  #offsetY = 0;
 
   constructor(container, onOrderChange) {
     this.#container = container;
@@ -10,18 +12,21 @@ export default class DragHandler {
 
   bind() {
     this.#container.querySelectorAll(".color-item").forEach((item) => {
-      item.addEventListener("dragstart", () => this.#onDragStart(item));
+      item.setAttribute("draggable", "true");
+      item.addEventListener("dragstart", (e) => this.#onDragStart(e, item));
       item.addEventListener("dragend",   () => this.#onDragEnd(item));
       item.addEventListener("dragover",  (e) => this.#onDragOver(e));
-      item.addEventListener("touchstart", (e) => this.#onTouchStart(e, item), { passive: false });
-      item.addEventListener("touchmove",  (e) => this.#onTouchMove(e),        { passive: false });
-      item.addEventListener("touchend",   () => this.#onTouchEnd());
     });
+
+    this.#container.addEventListener("touchstart", (e) => this.#onTouchStart(e), { passive: false });
+    this.#container.addEventListener("touchmove",  (e) => this.#onTouchMove(e),  { passive: false });
+    this.#container.addEventListener("touchend",   (e) => this.#onTouchEnd(e));
   }
 
-  #onDragStart(item) {
+  #onDragStart(e, item) {
     setTimeout(() => item.classList.add("dragging"), 0);
     this.#container._dragged = item;
+    e.dataTransfer.effectAllowed = "move";
   }
 
   #onDragEnd(item) {
@@ -38,22 +43,55 @@ export default class DragHandler {
     after ? this.#container.insertBefore(dragged, after) : this.#container.appendChild(dragged);
   }
 
-  #onTouchStart(e, item) {
-    if (!e.target.classList.contains("drag-handle")) return;
+  #onTouchStart(e) {
+    const handle = e.target.closest(".drag-handle");
+    if (!handle) return;
+    const item = handle.closest(".color-item");
+    if (!item) return;
+
+    e.preventDefault();
     this.#touchItem = item;
+
+    const rect = item.getBoundingClientRect();
+    this.#offsetY = e.touches[0].clientY - rect.top;
+
+    this.#clone = item.cloneNode(true);
+    Object.assign(this.#clone.style, {
+      position: "fixed",
+      left: rect.left + "px",
+      width: rect.width + "px",
+      top: rect.top + "px",
+      opacity: "0.85",
+      pointerEvents: "none",
+      zIndex: "9999",
+      margin: "0",
+    });
+    document.body.appendChild(this.#clone);
     item.classList.add("dragging");
   }
 
   #onTouchMove(e) {
     if (!this.#touchItem) return;
     e.preventDefault();
-    const after = this.#getElementAfter(e.touches[0].clientY);
-    after ? this.#container.insertBefore(this.#touchItem, after) : this.#container.appendChild(this.#touchItem);
+
+    const y = e.touches[0].clientY;
+    if (this.#clone) {
+      this.#clone.style.top = (y - this.#offsetY) + "px";
+    }
+
+    const after = this.#getElementAfter(y);
+    after
+      ? this.#container.insertBefore(this.#touchItem, after)
+      : this.#container.appendChild(this.#touchItem);
   }
 
-  #onTouchEnd() {
+  #onTouchEnd(e) {
     if (!this.#touchItem) return;
     this.#touchItem.classList.remove("dragging");
+    if (this.#clone) {
+      this.#clone.remove();
+      this.#clone = null;
+    }
     this.#touchItem = null;
     this.#saveOrder();
   }
@@ -61,7 +99,8 @@ export default class DragHandler {
   #getElementAfter(y) {
     const items = [...this.#container.querySelectorAll(".color-item:not(.dragging)")];
     return items.reduce((closest, child) => {
-      const offset = y - child.getBoundingClientRect().top - child.getBoundingClientRect().height / 2;
+      const box = child.getBoundingClientRect();
+      const offset = y - box.top - box.height / 2;
       if (offset < 0 && offset > closest.offset) return { offset, element: child };
       return closest;
     }, { offset: Number.NEGATIVE_INFINITY }).element;
