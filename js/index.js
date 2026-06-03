@@ -1,6 +1,7 @@
 import Database from "./Database.js";
 import ChecklistRenderer from "./ChecklistRenderer.js";
 import GalleryRenderer from "./GalleryRenderer.js";
+import ThemeChanger from "./ThemeChanger.js";
 import colors from "./ColorConfig.js";
 
 class App {
@@ -22,6 +23,8 @@ class App {
       colors,
       (newOrder) => this.#saveOrder(newOrder),
     );
+
+    new ThemeChanger(checklistEl, colors).bind();
 
     this.#gallery = new GalleryRenderer(galleryEl, this.#db, (id) =>
       this.#resetChecklistItem(id),

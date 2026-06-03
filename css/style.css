@@ -28,6 +28,7 @@ body {
 .indicator {
   border-radius: var(--radius-circle);
   border: var(--border-indicator);
+  cursor: pointer !important;
 }
 
 .status-checkbox {

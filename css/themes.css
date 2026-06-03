@@ -1,0 +1,107 @@
+html.pink {
+  --color-bg: #2d1a24;
+  --color-card: #3a1f2e;
+  --color-text: #ff0099;
+  --color-text-dim: #c9739b;
+  --color-border: #5a2840;
+  --color-border-light: #7a3558;
+  --color-action: #7a3558;
+  --color-action-hover: #9a4570;
+  --color-delete: #7a1a3a;
+}
+
+html.red {
+  --color-bg: #2d1a1a;
+  --color-card: #3a1f1f;
+  --color-text: #ff4040;
+  --color-text-dim: #c97373;
+  --color-border: #5a2828;
+  --color-border-light: #7a3535;
+  --color-action: #7a3535;
+  --color-action-hover: #9a4545;
+  --color-delete: #7a1a1a;
+}
+
+html.orange {
+  --color-bg: #24201d;
+  --color-card: #2d2824;
+  --color-text: #e57c49;
+  --color-text-dim: #aba38f;
+  --color-border: #3d3530;
+  --color-border-light: #565538;
+  --color-action: #565538;
+  --color-action-hover: #6d6c4b;
+  --color-delete: #792e29;
+}
+
+html.yellow {
+  --color-bg: #28251a;
+  --color-card: #322f1f;
+  --color-text: #e6c800;
+  --color-text-dim: #b8a840;
+  --color-border: #524a1a;
+  --color-border-light: #6e6424;
+  --color-action: #6e6424;
+  --color-action-hover: #8a7e30;
+  --color-delete: #6e4010;
+}
+
+html.white {
+  --color-bg: #f0eeea;
+  --color-card: #ffffff;
+  --color-text: #2a2620;
+  --color-text-dim: #7a7265;
+  --color-border: #d5cfc5;
+  --color-border-light: #bfb8ac;
+  --color-action: #bfb8ac;
+  --color-action-hover: #a8a095;
+  --color-delete: #c0392b;
+}
+
+html.green {
+  --color-bg: #182d1a;
+  --color-card: #1f3a22;
+  --color-text: #00e060;
+  --color-text-dim: #55c97a;
+  --color-border: #285a30;
+  --color-border-light: #357a40;
+  --color-action: #357a40;
+  --color-action-hover: #459a52;
+  --color-delete: #1a7a2a;
+}
+
+html.blue {
+  --color-bg: #151a2d;
+  --color-card: #1a203a;
+  --color-text: #4499ff;
+  --color-text-dim: #6688c9;
+  --color-border: #1e2e5a;
+  --color-border-light: #2a3e7a;
+  --color-action: #2a3e7a;
+  --color-action-hover: #38529a;
+  --color-delete: #1a1a7a;
+}
+
+html.indigo {
+  --color-bg: #1a1528;
+  --color-card: #221c35;
+  --color-text: #7b5ea7;
+  --color-text-dim: #9a82c0;
+  --color-border: #3a2a5a;
+  --color-border-light: #4e3a75;
+  --color-action: #4e3a75;
+  --color-action-hover: #644d92;
+  --color-delete: #3a1a6e;
+}
+
+html.violet {
+  --color-bg: #221525;
+  --color-card: #2d1c32;
+  --color-text: #bb55ee;
+  --color-text-dim: #aa77cc;
+  --color-border: #4a2055;
+  --color-border-light: #632c72;
+  --color-action: #632c72;
+  --color-action-hover: #7e3990;
+  --color-delete: #551a6e;
+}
